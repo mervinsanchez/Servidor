@@ -10,6 +10,12 @@ var usersRouter = require('./routes/users');
 // Esta ruta se adiciono
 var estudianteRouter = require('./routes/estudianteRouter');
 
+var mongoose = require('mongoose');
+var config = require('./config');
+var db = mongoose.connect(config.mongoUrl);
+// db.on('error', () => { console.log("Base de dtos en problemas") });
+// db.on('open', () => { console.log("Base Abierta") });
+
 var app = express();
 
 // view engine setup
