@@ -13,8 +13,8 @@ var estudianteRouter = require('./routes/estudianteRouter');
 var mongoose = require('mongoose');
 var config = require('./config');
 var db = mongoose.connect(config.mongoUrl);
-// db.on('error', () => { console.log("Base de dtos en problemas") });
-// db.on('open', () => { console.log("Base Abierta") });
+mongoose.connection.on('error', () => { console.log("Base de dtos en problemas") });
+mongoose.connection.once('open', () => { console.log("Base Abierta") });
 
 var app = express();
 
